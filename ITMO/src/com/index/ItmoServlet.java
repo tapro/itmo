@@ -1,4 +1,4 @@
-package com;
+package com.index;
 
 import java.io.IOException;
 import javax.servlet.http.*;

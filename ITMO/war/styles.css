@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+body {
+	background: black url("../images/bg.png") repeat left top;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 100%;
+	margin: 0;
+}
+
+table {
+	margin: auto;
+	width: 80%;
+	height: 100%;
+	background: white url("../images/bgTable.png") repeat left top;
+}
+
+td,th {
+	padding: 15px; 
+	vertical-align: center;
+}
+
+li {
+	color: #ec0b43;
+	text-align:center;
+	list-style-position:inside;
+}
