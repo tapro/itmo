@@ -2,10 +2,170 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Google Maps</title>
 <script src="jquery-2.1.0.min.js"></script>
+<link rel='stylesheet' type='text/css' href='styles.css'>
 </head>
-<body>
+<style>
+html,body,#map-canvas {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+#map-canvas{
+	border: 12px #1946ba outset;
+}
+</style>
+<script
+	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+	window.onload = function() {
+		var styles = [ {
+			featureType : 'water',
+			elementType : 'geometry.fill',
+			stylers : [ {
+				color : '#1946ba'
+			} ]
+		}, {
+			featureType : 'landscape.natural',
+			elementType : 'all',
+			stylers : [ {
+				hue : '#ec0b43'
+			}, {
+				lightness : -16
+			} ]
+		}, {
+			featureType : 'poi',
+			elementType : 'geometry',
+			stylers : [ {
+				hue : '#f9efb7'
+			}, {
+				lightness : 30
+			} ]
+		}, {
+			featureType : 'road',
+			elementType : 'geometry',
+			stylers : [ {
+				hue : '#ff00ff'
+			}, {
+				lightness : -14
+			} ]
+		}, {
+			featureType : 'road.local',
+			elementType : 'all',
+			stylers : [ {
+				hue : '#ff00a6'
+			}, {
+				saturation : 10
+			}, {
+				lightness : -32
+			} ]
+		} ];
+		var options = {
+			mapTypeControlOptions : {
+				mapTypeIds : [ 'Styled' ]
+			},
+			center : new google.maps.LatLng(56.7780437,44.038664, 10),
+			zoom : 6,
+			disableDefaultUI : true,
+			mapTypeId : 'Styled'
+		};
+		var div = document.getElementById('map-canvas');
+		var map = new google.maps.Map(div, options);
+		var styledMapType = new google.maps.StyledMapType(styles, {
+			name : 'Styled'
+		});
+		map.mapTypes.set('Styled', styledMapType);
 
+		var myLatlng = new google.maps.LatLng(55.75393, 37.620795, 15);
+		var contentString = '<div id="content">'
+				+ '<div id="siteNotice">'
+				+ '</div>'
+				+ '<h1 id="firstHeading" class="firstHeading">Красная Площадь</h1>'
+				+ '<div id="bodyContent">' + '<p><b>Москва</b><br> '
+				+ 'Казалось бы, сюда ехать ближе<br> Но <br> Нет ;) </p>'
+				+ '</div>' + '</div>';
+
+		var infowindow = new google.maps.InfoWindow({
+			content : contentString
+		});
+
+		var marker = new google.maps.Marker({
+			position : myLatlng,
+			map : map,
+			title : 'Красная Площадь (Москва)',
+			icon: 'images/marker.png'
+		});
+
+		var myLatlng2 = new google.maps.LatLng(54.191354, 45.227972, 15);
+		var contentString2 = '<div id="content">'
+				+ '<div id="siteNotice">'
+				+ '</div>'
+				+ '<h1 id="firstHeading" class="firstHeading">Мой первый дом</h1>'
+				+ '<div id="bodyContent">'
+				+ '<p>Первые 7&#160 лет моей жизни прошли здесь </p>'
+				+ '<p>Почитать про город можно <a href="https://ru.wikipedia.org/wiki/Саранск" target="_blank">'
+				+ 'тут</a> ' + '</div>' + '</div>';
+		var infowindow2 = new google.maps.InfoWindow({
+			content : contentString2
+		});
+		var marker2 = new google.maps.Marker({
+			position : myLatlng2,
+			map : map,
+			title : 'Мой первый дом (Саранск)',
+			icon: 'images/marker.png'
+		});
+
+		var myLatlng3 = new google.maps.LatLng(59.967989, 30.302855, 15);
+		var contentString3 = '<div id="content">'
+				+ '<div id="siteNotice">'
+				+ '</div>'
+				+ '<h1 id="firstHeading" class="firstHeading">Гимназия №56</h1>'
+				+ '<div id="bodyContent">'
+				+ '<p>А здесь я училась после переезда в 2008</p> '
+				+ '<p>Сайт гимназии: <a href="http://school56.org" target="_blank"> '
+				+ 'http://school56.org</a> ' + '</div>' + '</div>';
+
+		var infowindow3 = new google.maps.InfoWindow({
+			content : contentString3
+		});
+		var marker3 = new google.maps.Marker({
+			position : myLatlng3,
+			map : map,
+			title : 'Гимназия №56 (Санкт-Петербург)',
+			icon: 'images/marker.png'
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map, marker);
+		});
+
+		google.maps.event.addListener(marker2, 'click', function() {
+			infowindow2.open(map, marker2);
+		});
+
+		google.maps.event.addListener(marker3, 'click', function() {
+			infowindow3.open(map, marker3);
+		});
+	};
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<body>
+	<table>
+		<tr>
+			<th height="100px"><h1>
+					<font color="#1946ba">G</font><font color="#ec0b43">o</font><font
+						color="#1946ba">ogle Maps</font>
+				</h1></th>
+		</tr>
+		<tr>
+			<td><div id="map-canvas"></div></td>
+		</tr>
+		<tr>
+			<td height="30px" align="center"><a href="index.html"><font
+					color="#1946ba">На главную</font></a></td>
+		</tr>
+	</table>
 </body>
 </html>
