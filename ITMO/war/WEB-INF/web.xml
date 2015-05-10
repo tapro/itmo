@@ -27,5 +27,43 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
+	
+		<servlet>
+		<servlet-name>Two1</servlet-name>
+		<servlet-class>com.two.Two1Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Two1</servlet-name>
+		<url-pattern>/two1</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>Two3</servlet-name>
+		<servlet-class>com.two.Two3Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Two3</servlet-name>
+		<url-pattern>/two3</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>Two4</servlet-name>
+		<servlet-class>com.two.Two4Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Two4</servlet-name>
+		<url-pattern>/two4</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
 </web-app>
+
+
 

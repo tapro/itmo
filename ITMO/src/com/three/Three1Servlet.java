@@ -17,18 +17,16 @@ public class Three1Servlet extends HttpServlet {
 			n = Integer.parseInt(req.getParameter("N"), 10);
 			m = Integer.parseInt(req.getParameter("M"), 10);
 		} catch (NumberFormatException e) {
-			resp.getWriter().println("You are bad!");
 			pusto = true;
 		}
 
 		if ((n > m) || (n < 0) || (m > 65535) || pusto) {
-			resp.getWriter().print("You are wrong!");
+			resp.getWriter().print("¬ведите корректные числа!");
 		} else {
 			resp.getWriter().print("<table border=1, cellpadding=5>");
 			for (int i = n; i <= m; i++) {
 				resp.getWriter().print("<tr>");
 				for (int j = 0; (j < 10) && (i <= m); j++) {
-					;
 	//				resp.getWriter().println("<th>&#"+ i + "<br>"+ i+ "<br>"+ Integer.toHexString(i) + "</th>");
 					resp.getWriter().println("<th>&#"+ i + "<br>"+ i+ "<br>"+ toHex(i) + "</th>");
 					i++;
