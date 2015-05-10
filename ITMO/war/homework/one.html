@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Google Maps</title>
-<script src="jquery-2.1.0.min.js"></script>
-<link rel='stylesheet' type='text/css' href='styles.css'>
+<script src="../jquery-2.1.0.min.js"></script>
+<link rel='stylesheet' type='text/css' href='../css/myStyles.css'>
 </head>
 <style>
 html,body,#map-canvas {
@@ -94,7 +94,7 @@ html,body,#map-canvas {
 			position : myLatlng,
 			map : map,
 			title : 'Красная Площадь (Москва)',
-			icon: 'images/marker.png'
+			icon: '../images/marker.png'
 		});
 
 		var myLatlng2 = new google.maps.LatLng(54.191354, 45.227972, 15);
@@ -113,7 +113,7 @@ html,body,#map-canvas {
 			position : myLatlng2,
 			map : map,
 			title : 'Мой первый дом (Саранск)',
-			icon: 'images/marker.png'
+			icon: '../images/marker.png'
 		});
 
 		var myLatlng3 = new google.maps.LatLng(59.967989, 30.302855, 15);
@@ -133,7 +133,7 @@ html,body,#map-canvas {
 			position : myLatlng3,
 			map : map,
 			title : 'Гимназия №56 (Санкт-Петербург)',
-			icon: 'images/marker.png'
+			icon: '../images/marker.png'
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
@@ -163,7 +163,7 @@ html,body,#map-canvas {
 			<td><div id="map-canvas"></div></td>
 		</tr>
 		<tr>
-			<td height="30px" align="center"><a href="index.html"><font
+			<td height="30px" align="center"><a href="../index.html"><font
 					color="#1946ba">На главную</font></a></td>
 		</tr>
 	</table>
