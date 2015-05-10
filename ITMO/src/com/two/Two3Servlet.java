@@ -19,7 +19,7 @@ public class Two3Servlet extends HttpServlet implements Servlet {
 			resp.getWriter().print("<tr>");
 			for(int j=0;j<5;j++)
 			{
-				mas[i][j] = ((int)(Math.floor(Math.random()*89)+10));
+				mas[i][j] = ((int)(Math.floor(Math.random()*90)+10));
 				resp.getWriter().print("<th>"+ mas[i][j] + "</th>");
 			}
 			resp.getWriter().print("</tr>");

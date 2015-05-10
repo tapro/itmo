@@ -12,6 +12,12 @@
     		var m = $("#Mnumb").val();
 	   		$('#res1').load( "/two1?N="+n+"&M="+m);
     	});
+    	$('#equation').on('click',function(){
+    		var a = $("#Anumb").val();
+    		var b = $("#Bnumb").val();
+    		var c = $("#Cnumb").val();
+    		$('#res2').load( "/two2?A="+a+"&B="+b+"&C="+c);
+    	});
         $('#array1').on('click',function(){
         	$('#res3').load( "/two3");
         }); 
@@ -46,14 +52,15 @@
 			</td>
 		</tr>
 		<tr>
-			<td valign="top">
+			<td height="100px" valign="top">
 			<form>
 			<div>
 			    2. Введите коэффициенты a,b и c квадратного уравнения, чтобы получить его корни или узнать, что данное уравнение не имеет корней
    				<hr>
-    		    <input type="text" id="Min" placeholder="Начало">
-   				<input type="text" id="Max" placeholder="Конец">
-    			<input type="button" id="unic1" value="Do it now!">
+    		    <input type="text" id="Anumb" placeholder="a" style="width:33px"> x<sup>2</sup> +
+   				<input type="text" id="Bnumb" placeholder="b" style="width:33px"> x+
+    			<input type="text" id="Cnumb" placeholder="c" style="width:33px"> =0
+    			<input type="button" id="equation" value="Do it now!">
     			<hr>
     			<span id="res2"></span>
     		</div>
