@@ -29,3 +29,15 @@ li {
 	text-align:center;
 	list-style-position:inside;
 }
+
+.knife {
+	color: green;
+}
+
+.pistol {
+	color: blue;
+}
+
+.submachineGun {
+	color: red;
+}

@@ -5,6 +5,16 @@
 <title>Insert title here</title>
 <script src="../jquery-2.1.0.min.js"></script>
 <link rel='stylesheet' type='text/css' href='../css/myStyles.css'>
+<script>
+    $(document).ready(function() {
+    	$('#fight').on('click',function(){
+    		var w1 = $("#Wep1").val();
+    		var w2 = $("#Wep2").val();
+    		var d = $("#Distance").val();
+    		$('#res1').load( "/four1?W1="+w1+"&W2="+w2+"&D="+d);
+    	});
+    });
+</script>
 </head>
 <body>
 	<table>
@@ -15,10 +25,40 @@
 				</h1></th>
 		</tr>
 		<tr>
-			<td valign="top">
-					
+			<td height="60px">
+		<p align="center">Выберите два вида оружия для дуэли, задайте расстояние (в метрах), на котором хотите их испытать, и узнайте, кто из дуэлянтов победит.</p>
+		<p align="center"><i>Результат рассчитывается на основании дальности "действия" оружия, темпе его работы и моей логики</i></p>
+		<hr>
+		<p align="center"><font color="green">Зелёный</font> - ножи<br><font color="blue">Синий</font> - пистолеты<br><font color="red">Красный</font> - пистолеты-пулемёты</p>
+		<hr>
 			</td>
-		</tr>		
+		</tr>
+		<tr>
+			<td valign="top">
+			<SELECT id="Wep1" name="Weapon1">
+					<option disabled="disabled" selected="selected">Выберите первое оружие</option>
+					<option value="1" class="knife">Fairbairn-Sykes</option>
+					<option value="2" class="knife">M9</option>
+					<option value="3" class="pistol">Desert Eagle</option>
+					<option value="4" class="pistol">Glock-17</option>
+					<option value="5" class="submachineGun">MP40 </option>
+					<option value="6" class="submachineGun">M1 Thompson</option>				
+			</SELECT>
+			<SELECT id="Wep2" name="Weapon2">
+					<option disabled="disabled" selected="selected">Выберите второе оружие</option>
+					<option value="1" class="knife">Fairbairn-Sykes</option>
+					<option value="2" class="knife">M9</option>
+					<option value="3" class="pistol">Desert Eagle</option>
+					<option value="4" class="pistol">Glock-17</option>
+					<option value="5" class="submachineGun">MP40 </option>
+					<option value="6" class="submachineGun">M1 Thompson</option>				
+			</SELECT>
+			<input type="text" id="Distance" placeholder="Расстояние"  style="width:80px">
+			<input type="button" id="fight" value="Fight!">
+			<hr>
+    		<span id="res1"></span>
+			</td>
+		</tr>
 		<tr>
 			<td height="30px" align="center"><a href="../index.html"><font
 					color="#1946ba">На главную</font></a></td>

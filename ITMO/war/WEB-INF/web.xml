@@ -4,30 +4,7 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-	<servlet>
-		<servlet-name>Three</servlet-name>
-		<servlet-class>com.three.ThreeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Three</servlet-name>
-		<url-pattern>/three</url-pattern>
-	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
-	
-		<servlet>
-		<servlet-name>Three1</servlet-name>
-		<servlet-class>com.three.Three1Servlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Three1</servlet-name>
-		<url-pattern>/three1</url-pattern>
-	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
-	
+
 		<servlet>
 		<servlet-name>Two1</servlet-name>
 		<servlet-class>com.two.Two1Servlet</servlet-class>
@@ -71,6 +48,42 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>Two4</servlet-name>
 		<url-pattern>/two4</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+		<servlet>
+		<servlet-name>Three</servlet-name>
+		<servlet-class>com.three.ThreeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Three</servlet-name>
+		<url-pattern>/three</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+		<servlet>
+		<servlet-name>Three1</servlet-name>
+		<servlet-class>com.three.Three1Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Three1</servlet-name>
+		<url-pattern>/three1</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+			<servlet>
+		<servlet-name>Four1</servlet-name>
+		<servlet-class>com.four.Four1Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Four1</servlet-name>
+		<url-pattern>/four1</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
