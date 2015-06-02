@@ -5,6 +5,17 @@
 <title>Insert title here</title>
 <script src="../jquery-2.1.0.min.js"></script>
 <link rel='stylesheet' type='text/css' href='../css/myStyles.css'>
+<script>
+	$(document).ready(function() {
+		$('#Random').on('click', function() {
+			$('#res').load("/wordgame?action=" + "1");
+		});
+		$('#button').on('click', function() {
+			var ans = $("#pole").val();
+			$('#res2').load("/wordgame?action=" + "2" + "&answer=" + ans+ '&vopros='+ $("#elNum").val());
+		});
+	});
+</script>
 </head>
 <body>
 	<table>
@@ -16,9 +27,18 @@
 		</tr>
 		<tr>
 			<td valign="top">
-					
+			<form>
+			<div>
+			Нажмите на кнопку и получите вопрос. Предложение ограничено. Торопитесь!
+			<hr>
+			<input type="button" id="Random" value="Do it now!"> <span id="res"></span>
+			<hr>
+			<input type="text" id="pole" placeholder="Ваш ответ"> 
+			<input type="button" id="button" value="Check!"> <span id="res2"></span>
+			</div>
+    		</form>		
 			</td>
-		</tr>		
+		</tr>
 		<tr>
 			<td height="30px" align="center"><a href="../index.html"><font
 					color="#1946ba">На главную</font></a></td>
