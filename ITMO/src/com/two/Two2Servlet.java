@@ -28,10 +28,10 @@ public class Two2Servlet extends HttpServlet implements Servlet {
 				resp.getWriter().print("x="+ -c/b);
 			}
 			else if(a==0 && b==0 && c!=0){
-				resp.getWriter().print("Это ничуть не похоже на уравнение");
+				resp.getWriter().print("Р­С‚Рѕ РЅРёС‡СѓС‚СЊ РЅРµ РїРѕС…РѕР¶Рµ РЅР° СѓСЂР°РІРЅРµРЅРёРµ");
 			}
 			else if(a==0 && b==0 && c==0){
-				resp.getWriter().print("x - любое число");
+				resp.getWriter().print("x - Р»СЋР±РѕРµ С‡РёСЃР»Рѕ");
 			}
 			else{
 				double d = b * b - 4 * a * c;
@@ -42,11 +42,11 @@ public class Two2Servlet extends HttpServlet implements Servlet {
 					resp.getWriter().print("x<sub>1</sub>=x<sub>2</sub>="+ (-b)/(2*a));
 				}
 				else {
-					resp.getWriter().print("Уравнение не имеет корней");
+					resp.getWriter().print("РЈСЂР°РІРЅРµРЅРёРµ РЅРµ РёРјРµРµС‚ РєРѕСЂРЅРµР№");
 				}
 			}
 		} else {
-			resp.getWriter().println("Введите корректные числа");
+			resp.getWriter().println("Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ С‡РёСЃР»Р°");
 		}
 
 	}

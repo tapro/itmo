@@ -23,19 +23,19 @@ public class WordGameServlet extends HttpServlet {
 		Queswers three = new Queswers();
 		Queswers four = new Queswers();
 		mas[0]=zero;
-		zero.quest="Кто проживает на дне океана?";
-		zero.ansStr="Губка";
+		zero.quest="РљС‚Рѕ РїСЂРѕР¶РёРІР°РµС‚ РЅР° РґРЅРµ РѕРєРµР°РЅР°?";
+		zero.ansStr="Р“СѓР±РєР°";
 		mas[1]=one;
-		one.quest="День рождения Ленина?";
+		one.quest="Р”РµРЅСЊ СЂРѕР¶РґРµРЅРёСЏ Р›РµРЅРёРЅР°?";
 		one.ansData="22.04.1870";
 		mas[2]=two;
-		two.quest="Сколько в среднем ног у кота?";
+		two.quest="РЎРєРѕР»СЊРєРѕ РІ СЃСЂРµРґРЅРµРј РЅРѕРі Сѓ РєРѕС‚Р°?";
 		two.ansNum=0;
 		mas[3]=three;
-		three.quest="Как зовут мою собаку?";
+		three.quest="РљР°Рє Р·РѕРІСѓС‚ РјРѕСЋ СЃРѕР±Р°РєСѓ?";
 		three.ansStr="Winsent";
 		mas[4]=four;
-		four.quest="Сколько месяцев в году?";
+		four.quest="РЎРєРѕР»СЊРєРѕ РјРµСЃСЏС†РµРІ РІ РіРѕРґСѓ?";
 		four.ansNum=12;
 		
 		if(act==1)
@@ -51,10 +51,10 @@ public class WordGameServlet extends HttpServlet {
 				resp.getWriter().println(e.getMessage());
 			}
 			catch(ParseException e) {
-				resp.getWriter().println("Даты формат чч.мм.гггг");
+				resp.getWriter().println("Р”Р°С‚С‹ С„РѕСЂРјР°С‚ С‡С‡.РјРј.РіРіРіРі");
 			}
 			catch(NumberFormatException e) {
-				resp.getWriter().println("Число ввести нужно здесь");
+				resp.getWriter().println("Р§РёСЃР»Рѕ РІРІРµСЃС‚Рё РЅСѓР¶РЅРѕ Р·РґРµСЃСЊ");
 			}
 		}
 	}
@@ -62,7 +62,7 @@ public class WordGameServlet extends HttpServlet {
 	public static void checkAnswerF(Queswers[] q, String ua, int i,HttpServletResponse resp) throws IOException, TaproException, ParseException, NumberFormatException {
 		int indexMas=i;
 		boolean valid = q[indexMas].checkStr(ua);
-		if (valid)resp.getWriter().println("<br>Всё верно");
-		else resp.getWriter().println("<br>Это не так");
+		if (valid)resp.getWriter().println("<br>Р’СЃС‘ РІРµСЂРЅРѕ");
+		else resp.getWriter().println("<br>Р­С‚Рѕ РЅРµ С‚Р°Рє");
 	}	
 }

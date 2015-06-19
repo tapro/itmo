@@ -21,15 +21,15 @@ public class Two1Servlet extends HttpServlet {
 		}
 		if (corr) {
 			if (Math.abs(n - 10) > Math.abs(m - 10)) {
-				resp.getWriter().println("Ближайшее к десяти число: " + m);
+				resp.getWriter().println("Р‘Р»РёР¶Р°Р№С€РµРµ Рє РґРµСЃСЏС‚Рё С‡РёСЃР»Рѕ: " + m);
 			} else if (Math.abs(n - 10) < Math.abs(m - 10)) {
-				resp.getWriter().println("Ближайшее к десяти число: " + n);
+				resp.getWriter().println("Р‘Р»РёР¶Р°Р№С€РµРµ Рє РґРµСЃСЏС‚Рё С‡РёСЃР»Рѕ: " + n);
 			} else {
-				resp.getWriter().println(n + " и " + m + " одинаково близки к десяти");
+				resp.getWriter().println(n + " Рё " + m + " РѕРґРёРЅР°РєРѕРІРѕ Р±Р»РёР·РєРё Рє РґРµСЃСЏС‚Рё");
 			}
 		}
 		else {
-			resp.getWriter().println("Введите корректные числа");			
+			resp.getWriter().println("Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ С‡РёСЃР»Р°");			
 		}
 	}
 }

@@ -15,7 +15,7 @@ public class Queswers {
 	public boolean checkStr(String answer) throws TaproException, ParseException, NumberFormatException{
 		if (ansStr != null){
 			if(!ansStr.equals(answer)){
-				throw new TaproException("<br>Вы дали неверный ответ");
+				throw new TaproException("<br>Р’С‹ РґР°Р»Рё РЅРµРІРµСЂРЅС‹Р№ РѕС‚РІРµС‚");
 			}
 		}
 		if (ansData != null){

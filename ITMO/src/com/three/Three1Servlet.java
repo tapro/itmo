@@ -21,7 +21,7 @@ public class Three1Servlet extends HttpServlet {
 		}
 
 		if ((n > m) || (n < 0) || (m > 65535) || pusto) {
-			resp.getWriter().print("Введите корректные числа!");
+			resp.getWriter().print("Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ С‡РёСЃР»Р°!");
 		} else {
 			resp.getWriter().print("<table border=1, cellpadding=5>");
 			for (int i = n; i <= m; i++) {

@@ -39,7 +39,7 @@ public class Two4Servlet extends HttpServlet implements Servlet {
 					max=mas[i][j];
 			}
 		}
-		resp.getWriter().print("<tr><th colspan=8>Максимум: "+ max + "<br>Минимум: " + min + "</th></tr>");
+		resp.getWriter().print("<tr><th colspan=8>РњР°РєСЃРёРјСѓРј: "+ max + "<br>РњРёРЅРёРјСѓРј: " + min + "</th></tr>");
 		resp.getWriter().println("</table>");
 	}
 

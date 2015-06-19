@@ -35,7 +35,7 @@ public class Four1Servlet extends HttpServlet {
 
 		
 		if (pusto) {
-			resp.getWriter().print("Задайте корректные параметры!");
+			resp.getWriter().print("Р—Р°РґР°Р№С‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹!");
 		} else {
 			switch(w1){
 			case 1:
