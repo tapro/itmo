@@ -18,13 +18,14 @@ public class CemetServlet extends HttpServlet {
 		resp.setContentType("text/html");
 		resp.setCharacterEncoding("UTF-8");
 		resp.getWriter().println("<HTML>");
-		resp.getWriter().println("<HEAD><TITLE>Hello World</TITLE></HEAD><link rel='stylesheet' type='text/css' href='../css/myStyles.css'>");
+		resp.getWriter().println("<HEAD><TITLE>CSV</TITLE></HEAD><link rel='stylesheet' type='text/css' href='../css/myStyles.css'>");
 		resp.getWriter().println("<BODY><table>");
 	
 		Integer okato = Integer.parseInt(req.getParameter("okato"));
 
 		ArrayList<District> districts = new ArrayList<District>();
 		ArrayList<Cemetery> cemeterys = new ArrayList<Cemetery>();
+		ArrayList<Hospital> hospitals = new ArrayList<Hospital>();
 
 		District dist0 = new District();
 		dist0.setTitle("Неизвестный");
@@ -82,20 +83,40 @@ public class CemetServlet extends HttpServlet {
 
 				}
 				reader.close();
-
 			} catch (IOException e) {
 				resp.getWriter().println("Не могу прочитать файл кладбищ.");
 			}
+			try {
+				URL url2 = new URL("http://tapro-first-project.appspot.com/csv/hospitals.csv");
+
+				BufferedReader reader2 = new BufferedReader(
+						new InputStreamReader(url2.openStream(), "UTF-8"));
+
+				CSVReader csv2 = new CSVReader(reader2);
+				List<String[]> rows2 = csv2.readAll();
+
+				for (String[] row : rows2) {
+
+					Hospital hosp = new Hospital();
+					hosp.setTitle(row[8]);
+					hosp.setType(row[1]);
+					hosp.setAddress(row[2]);
+					hosp.setDistrict(Utils.getDistrictByName(districts, row[3]));
+					hospitals.add(hosp);
+					}
+				reader2.close();
+				} catch (IOException e) {
+					resp.getWriter().println("Не могу прочитать файл лечебно-профилактических учреждений.");
+			}
 			
 			if (!cemeterys.isEmpty()) {
-				String d = new String(Utils.getDistrictNameByOkato(districts, okato));
 				resp.getWriter().println("<tr><th  height="+"100px><h1><font color=#1946ba>"+Utils.getDistrictNameByOkato(districts, okato)+" район</font></h1></th></tr>");
 				int tab = 0;
 
 				for (Cemetery cemet : cemeterys) {
 					if (okato.equals(cemet.getDistrict().getOkato())) {
 						if(tab==0){
-							resp.getWriter().println("<tr><td  valign=top>В данном районе участки земли для погребения предоставляются на следующих кладбищах:");
+							resp.getWriter().println("<tr><td  valign=top><font color=#ec0b43>В данном районе участки земли для погребения предоставляются на следующих кладбищах:</font>");
 							resp.getWriter().println("<table class=s border=1 cellspacing=0 cellpadding=5><tr style=max-height:100px;><td><b>Название</b></td><td><b>Адрес</b></td><td><b>Режим работы</b></td><td><b>Примечание</b></td></tr>");
 							tab++;
 						}
@@ -107,11 +128,39 @@ public class CemetServlet extends HttpServlet {
 					}
 				}
 				if(tab==0){
-					resp.getWriter().println("<tr><td  valign=top>В данном районе участки земли для погребения не предоставляются");
+					resp.getWriter().println("<tr><td  valign=top><font color=#ec0b43>В данном районе участки земли для погребения не предоставляются</font>");
 				}
 				else {
 					resp.getWriter().println("</td></tr></table>");
 				}
+			}
+
+			
+			if (!hospitals.isEmpty()) {
+				
+				int tab = 0;
+				
+				for (Hospital hosp : hospitals) {
+					if (okato.equals(hosp.getDistrict().getOkato())) {
+						if(tab==0){
+							resp.getWriter().println("<tr><td valign=top><font color=#ec0b43>Если вам ещё рано умирать, загляните в одно из лечебно-профилактических учреждений данного района:</font>");
+							resp.getWriter().println("<table class=s border=1 cellspacing=0 cellpadding=5><tr style=max-height:100px;><td><b>Название</b></td><td><b>Тип</b></td><td><b>Адрес</b></td>");
+							tab++;
+						}
+						resp.getWriter().println("<tr><td>" + hosp.getTitle()
+								+ "</td><td>" + hosp.getType()
+								+ "</td><td>" + hosp.getAddress()
+								+ "</td></tr>");
+					}
+				}
+				
+				if(tab==0){
+					resp.getWriter().println("<tr><td  valign=top><font color=#ec0b43>Лечебно-профилактические учреждения, принадлежащие данному району (и только ему!) не найдены</font>");
+				}
+				else {
+					resp.getWriter().println("</td></tr></table>");
+				}
+				
 				resp.getWriter().println("<tr><td height=30px align=center><a href=homework/six.html><fontcolor=#1946ba>Назад</font></a></td></tr>");
 				resp.getWriter().println("<tr><td height=30px align=center><a href=../index.html><fontcolor=#1946ba>На главную</font></a></td></tr>");
 				resp.getWriter().println("</td></tr></table></BODY></HTML>");

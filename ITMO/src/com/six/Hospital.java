@@ -1,19 +1,25 @@
 package com.six;
 
-public class Cemetery {
-	
+public class Hospital {
+
 	private String title;
+	private String type;
 	private String address;
-	private String hours;
-	private String comment;
+	private String number;
 	private District district;
-	
 	
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	public String getAddress() {
@@ -23,19 +29,12 @@ public class Cemetery {
 		this.address = address;
 	}
 	
-	public String getHours() {
-		return hours;
+	public String getNumber() {
+		return number;
 	}
-	public void setHours(String hours) {
-		this.hours = hours;
+	public void setNumber(String number) {
+		this.number = number;
 	}
-	
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
-	}	
 	
 	public District getDistrict() {
 		return district;
@@ -43,4 +42,5 @@ public class Cemetery {
 	public void setDistrict(District district) {
 		this.district = district;
 	}
+	
 }
